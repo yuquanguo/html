@@ -1,5 +1,5 @@
 * {
-    list-style-type:none; 
+    list-style-type: none;
     margin: 0;
     padding: 0;
     outline: none;
@@ -7,65 +7,91 @@
     border-style: none;
 }
 
-#nav { 
+#nav {
     min-width: 720px;
     width: 100%;
     height: 94px;
-    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 #nav img#logo {
     margin: 26px 52px;
 }
 
-#select_nav, #arrow_down, #navlist li img{
+#select_nav,
+#arrow_down,
+#navlist li img {
     display: none;
 }
 
 #navlist {
-    float:right;
+    float: right;
     margin: 40px 52px 39px 0px;
 }
-		#navlist ul, #navlist li
-		{
-			margin: 0;
-			padding: 0;
-			display: inline;
-			list-style-type: none;
-		}
 
-        #navlist a {
-            float: left;
-			line-height: 14px;
-			text-decoration: none;
-            padding: 0 25px 8px 25px;
-            font-size: 12px;
-            color: #373A39;
-        }        
-		
-		#navlist a:link, #navlist a:visited
-		{
-            opacity: 0.4;
-            font-family: AppleSystemUIFont;
-            letter-spacing: 0.6px;
-		}
-		
-		#navlist a:link#current, #navlist a:visited#current, #navlist a:hover, #navlist a.current
-		{
-			border-bottom: 2px solid #3450A5;
-			font-family: SFNSText-Bold;
-            opacity: 1.0;
-		}
+#navlist ul,
+#navlist li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+#navlist a {
+    float: left;
+    line-height: 14px;
+    text-decoration: none;
+    padding: 0 25px 8px 25px;
+    font-size: 12px;
+    color: #373A39;
+}
+
+#navlist a:link,
+#navlist a:visited {
+    opacity: 0.4;
+    font-family: AppleSystemUIFont;
+    letter-spacing: 0.6px;
+}
+
+#navlist a:link#current,
+#navlist a:visited#current,
+#navlist a:hover,
+#navlist a.current {
+    border-bottom: 2px solid #3450A5;
+    font-family: SFNSText-Bold;
+    opacity: 1.0;
+}
 
 #main {
     width: 100%;
 }
+/* 标题下面蓝色短线 */
+
+hr.line {
+    height: 4px;
+    width: 60px;
+    color: #344EA0;
+    background-color: #344EA0;
+    margin-top: 20px;
+}
+/* 页面的标题 */
+
+h2.title {
+    font-family: SFNSDisplay-Regular;
+    font-size: 60px;
+    color: #242121;
+    letter-spacing: -1.66px;
+    line-height: 75px;
+}
+/* contact start */
 
 #contact {
     display: table;
-    table-layout:none;
-    width:100%;
+    table-layout: none;
+    width: 100%;
 }
-#contact div#contact_info{
+
+#contact div#contact_info {
     display: table-cell;
     padding: 146px 0px 162px 88px;
 }
@@ -74,34 +100,17 @@
     width: 460px;
     margin: 0 auto;
 }
+
 #contact_info h2 {
     font-family: SFNSDisplay-Regular;
     font-size: 60px;
     color: #242121;
     letter-spacing: -1.66px;
-    
     line-height: 75px;
 }
 
-/* 标题下面蓝色短线 */
-hr.line {
-    height: 4px;
-    width: 60px;
-    color: #344EA0;
-    background-color:#344EA0;
-    margin-top: 20px;
-}
-
-/* 页面的标题 */
-h2.title {
-    font-family: SFNSDisplay-Regular;
-    font-size: 60px;
-    color: #242121;
-    letter-spacing: -1.66px;
-    line-height: 75px;
-}
-
-#contact_info input , textarea {
+#contact_info input,
+textarea {
     padding-bottom: 16px;
     border-bottom: 2px solid #373A39;
     font-family: SFNSText-Regular;
@@ -112,18 +121,20 @@ h2.title {
     line-height: 20px;
 }
 
-#contact_info input#user_name{
+#contact_info input#user_name {
     margin-top: 88px;
-} 
-#contact_info input#user_email{
+}
+
+#contact_info input#user_email {
     margin-top: 32px;
 }
-#contact_info textarea#message{
+
+#contact_info textarea#message {
     margin-top: 32px;
     height: 154px;
 }
 
-#contact_info button#send_message{
+#contact_info button#send_message {
     width: 230px;
     height: 45px;
     font-family: AppleSystemUIFont;
@@ -134,8 +145,7 @@ h2.title {
     margin-top: 40px;
 }
 
-
-#map { 
+#map {
     display: table-cell;
     height: 896px;
     width: 423px;
@@ -147,29 +157,35 @@ h2.title {
     text-align: center;
     background: #373A39;
 }
+
 #bottom img.footer-logo {
     margin-top: 110px;
 }
+
 #bottom ul {
     margin-top: 73px;
 }
+
 #bottom li {
     margin: 0px 15px 0px 15px;
-	padding: 0;
+    padding: 0;
     display: inline;
-	list-style-type: none;
+    list-style-type: none;
     font-family: AppleSystemUIFont;
     font-size: 12px;
     color: #FFFFFF;
     letter-spacing: 4px;
 }
-#contactlist a:link,a:visited {
+
+#contactlist a:link,
+a:visited {
     text-decoration: none;
     font-family: AppleSystemUIFont;
     font-size: 12px;
     color: #FFFFFF;
     letter-spacing: 4px;
 }
+
 #bottom p {
     margin-top: 65px;
     font-family: SFNSText-Regular;
@@ -177,6 +193,7 @@ h2.title {
     color: #A8A8A8;
     line-height: 32px;
 }
+
 #bottom img.angle-up {
     margin-top: 57px;
     margin-bottom: 60px;
@@ -190,89 +207,103 @@ h2.title {
     font-size: 12px;
     color: #CCCCCC;
 }
+/* contact end */
+/* about us start */
 
 #about-us {
     background: #F6F8FA;
 }
+
 #about-us img {
     float: left;
 }
+
 #about-us div#our-info {
     float: left;
     width: 570px;
-    padding:101px 68px 156px 68px;
+    padding: 101px 68px 156px 68px;
 }
 
 div#our-info p {
-    margin-top: 136px; 
+    margin-top: 136px;
     font-family: SFNSText-Regular;
     font-size: 14px;
     color: #373A39;
     line-height: 24px;
 }
+/* about us end*/
+/* our team start */
 
 #our-team {
-    margin: 102px auto;
-    width: 960px;
+    margin: 0 auto;
+    width: 100%;
 }
+
+.top {margin: 102px 9%}
 
 .team-list {
     margin-top: 46px;
+    width: 100%;
 }
 
 .team-list .member {
+    margin: 90px 9%;
+    height: 160px;
+    overflow: hidden;
     display: table;
-    margin-top: 90px; 
 }
+
 .team-list .member .img {
-    display: table-cell;
     width: 160px;
-    vertical-align:middle
-}
-.team-list .member .text {
-    padding-left: 60px;
+    position: relative;
     display: table-cell;
+    vertical-align: middle;
+}
+
+.team-list .member .text {
+    padding-left: 6%;
     width: 100%;
     height: 100%;
-    margin-left:60px; 
-    vertical-align:middle
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .team-list .member .text span {
+    clear: both;
     font-family: SFNSDisplay-Regular;
-    vertical-align: center;
     font-size: 32px;
     color: #32393D;
 }
 
-.team-list .member  .text p {
+.team-list .member .text p {
     font-family: SFNSText-Regular;
-    vertical-align: center;
     font-size: 14px;
     color: #373A39;
+    text-align:justify;
     line-height: 24px;
 }
-
-
-/* */
+/* our team end */
+/* product start */
 
 .product {
     width: 1024px;
     margin: 0 auto;
 }
+
 .product_top {
     margin: 101px 0 0 88px;
 }
 
 .middle {
-	width: 100%;
-	overflow: hidden;
+    width: 100%;
+    overflow: hidden;
     min-width: 1024px;
     height: 100%;
     margin: 50px 0 118px 21px;
 }
 
-.right,.left {
+.right,
+.left {
     width: 35px;
     height: 100%;
     margin-top: 126px;
@@ -280,13 +311,12 @@ div#our-info p {
 }
 
 .right {
-    margin-left: 9px; 
+    margin-left: 9px;
 }
 
 .left {
     margin-right: 33px;
 }
-
 
 .showbox {
     float: left;
@@ -305,12 +335,12 @@ div#our-info p {
     overflow: hidden;
 }
 
-.productbox{
+.productbox {
     display: block;
     height: 314px;
     width: 904px;
     margin: 0 auto;
-	overflow: hidden;
+    overflow: hidden;
     float: left;
 }
 
@@ -326,6 +356,7 @@ div#our-info p {
     letter-spacing: 0px;
     line-height: 52px;
 }
+
 .productbox p {
     margin-top: 32px;
     font-family: SFNSText-Regular;
@@ -337,36 +368,38 @@ div#our-info p {
     color: #373A39;
     line-height: 24px;
 }
-.productbox img{
+
+.productbox img {
     float: left;
-	width: 433px;
-	height: 288px;
+    width: 433px;
+    height: 288px;
     margin-top: 40px;
-	float: left;
+    float: left;
 }
 
 .icobox {
     clear: both;
-	width: 120px;
-	height: 12px;
-	left: 220px;
-	bottom: 10px;
-	text-align: center;
-	line-height: 40px;
-	overflow: hidden;
+    width: 120px;
+    height: 12px;
+    left: 220px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
     margin-left: 58px;
 }
 
 .icobox span {
     width: 11px;
     height: 11px;
-	background: url("../img/Dot1.png") center no-repeat;
-	cursor: pointer;
-	float: left;
-	margin-left: 3px;
+    background: url("../img/Dot1.png") center no-repeat;
+    cursor: pointer;
+    float: left;
+    margin-left: 3px;
 }
 
-.icobox span.active{
-	background: url("../img/Dot2.png") center no-repeat;
-	cursor: default;
+.icobox span.active {
+    background: url("../img/Dot2.png") center no-repeat;
+    cursor: default;
 }
+/* product end */

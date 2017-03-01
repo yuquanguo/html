@@ -3,10 +3,10 @@ $(document).ready(function () {
     function deskClickNav(li) {
         $('#navlist li a').removeClass("current");
         var $this = $(li),
-            _clickTab = $this.find('a').attr('target');
-        $this.find('a').addClass("current"),
+            _clickTab = $this.find('a').attr('target'),
             a_id = $this.find('a').attr("id");
-        if (a_id == "home") {
+        $this.find('a').addClass("current");
+        if (a_id == "nav_home") {
             $("#main").css("background", "#344DA1");
         } else {
             $("#main").css("background", "none");
@@ -26,36 +26,56 @@ $(document).ready(function () {
         $this.find('img').addClass("current");
     };
 
-    var scrWidth = $(window).width();
-    var path = "./desk/home.html";
-    var css = "css/desk.css";
-    var clickNav = deskClickNav;
-    if (scrWidth < 800) {
-        path = "./mb/home.html";
-        css = "css/mb.css";
-        clickNav = mbClickNav;
-    }
-    else if (scrWidth > 1336) {
-        path = "./hd/home.html";
-    }
-    $("<link>")
-        .attr({
-            rel: "stylesheet",
-            type: "text/css",
-            href: css
-        })
-        .appendTo("head");
-    $("#home").attr('target', path);
+    function initHome(scrWidth) {
+        var path = "./desk/home.html";
+        var clickNav = deskClickNav;
+        if (scrWidth < 800) {
+            path = "./mb/home.html";
+            clickNav = mbClickNav;
+            $("#select_nav").click(function () {
+                $('#navlist').css("display", "block");
+            });
+        }
+        else if (scrWidth > 1336) {
+            path = "./hd/home.html";
+        }
+        $("#home").attr('target', path);
 
-    $.get(path, function (data) {
-        $("#main").html(data);
-        $("#main").css("background", "#344DA1");
-    });
+        $.get(path + "?ddfj", function (data) {
+            $("#main").html(data);
+            $("#main").css("background", "#344DA1");
+        });
+        $('#navlist li').click(function () {
+            clickNav(this);
+        });
+    }
 
-    $('#navlist li').click(function () {
-        clickNav(this);
-    });
-    $("#select_nav").click(function () {
-        $('#navlist').css("display", "block");
+    initHome($(window).width());
+
+
+    var lastWidth;
+    $(window).resize(function (event) {
+        var width = $(this).width();
+        if (width > 800 && lastWidth < 800) {
+            $('#navlist li').unbind("click");
+            $('#navlist').css("display", "block");
+            $('#navlist li').click(function () {
+                deskClickNav(this);
+            });
+            if ($("#nav_home").hasClass("current")) {
+                initHome(width);
+            }
+        } else if (width < 800 && lastWidth > 800) {
+            $('#navlist li').unbind("click");
+            $('#navlist').css("display", "none");
+            $('#navlist li').click(function () {
+                mbClickNav(this);
+            });
+            if ($("#nav_home").hasClass("current")) {
+                initHome(width);
+            }
+        }
+
+        lastWidth = width;
     });
 });
