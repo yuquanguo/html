@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         $(imagebox).css({ 'width': imageboxWidth * imagenum + "px" });
         showbox.css({ 'width': imageboxWidth + "px" });
-        $("productbox").each(function () {
+        $(".productbox").each(function () {
             $(this).css({ 'width': imageboxWidth + "px" });
         });
         $(".text").each(function () {

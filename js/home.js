@@ -27,6 +27,9 @@ $(document).ready(function () {
     };
 
     function initHome(scrWidth) {
+        var navList_li = $('#navlist li');
+        navList_li.off("click");
+
         var path = "./desk/home.html";
         var clickNav = deskClickNav;
         if (scrWidth < 800) {
@@ -40,12 +43,22 @@ $(document).ready(function () {
             path = "./hd/home.html";
         }
         $("#home").attr('target', path);
+
         if ($("#nav_home").hasClass("current")) {
             $.get(path, function (data) {
                 $("#main").html(data);
                 $("#main").css("background", "#344DA1");
             });
         }
+        navList_li.each(function () {
+            var $this = $(this);
+            if ($this.find('a').hasClass("current")) {
+                text = $this.text();
+                $('#select_nav').text(text);
+                $('#navlist li img').removeClass("current");
+                $this.find('img').addClass("current");
+            }
+        });
         $('#navlist li').click(function () {
             clickNav(this);
         });
@@ -58,15 +71,12 @@ $(document).ready(function () {
     $(window).resize(function () {
         var width = $(this).width();
         if (width > 800 && lastWidth < 800) {
-            $('#navlist li').unbind("click");
             $('#navlist').css("display", "block");
             initHome(width);
         } else if (width < 800 && lastWidth > 800) {
-            $('#navlist li').unbind("click");
             $('#navlist').css("display", "none");
             initHome(width);
         }
-
         lastWidth = width;
     });
 });
