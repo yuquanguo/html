@@ -1,12 +1,3 @@
-* {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: 0;
-    border-style: none;
-}
-
 #nav {
     min-width: 720px;
     width: 100%;

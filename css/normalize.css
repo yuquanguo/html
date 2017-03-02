@@ -1,0 +1,29 @@
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+/*设置所有元素为传统盒模型*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    border-style: none;
+}
