@@ -206,21 +206,28 @@ h2.title {
 #about-us {
     background: #F6F8FA;
 }
-#about-us img {
-    display: none;
+.au_img {
+    width: 100%;
+    height: 220px;
+    background-size: 100% 270px;
+    overflow: hidden;
+    background-image: url("../img/img.png");
+    background-position: top; 
+    background-repeat: no-repeat;
 }
-#about-us div#our-info {
-    padding: 90px 0;
+#our-info {
+    padding: 40px 8%;
 }
-#about-us div#our-info p {
-    margin: 0 35px;
+#our-info  h2, #our-info  hr {
+    display: block;
+}
+
+#our-info p {
     font-family: AppleSystemUIFont;
     font-size: 14px;
     color: #777777;
-}
-
-#our-team top {
-    display:  none;
+    text-align:justify;
+    margin-top: 30px; 
 }
 
 #our-team {
@@ -284,7 +291,7 @@ h2.title {
     width: 15%;
     height: 100%;
     text-align: center;
-    padding-top: 181px;
+    padding-top: 250px;
     float: left;
 }
 
@@ -302,6 +309,7 @@ h2.title {
 }
 
 .productbox{
+    margin-top:90px; 
     position: relative;
     height: 534px;
     float: left;
@@ -309,7 +317,7 @@ h2.title {
 
 .productbox .intro {
     position: absolute;
-    top: 269px;
+    top: 200px;
 }
 
 .productbox .p_title {
