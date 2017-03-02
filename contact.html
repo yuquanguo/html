@@ -1,54 +1,56 @@
-<div id="contact">
+<head>
+    <style type="text/css">body, div {margin: 0; padding: 0}</style>
+    <link rel="stylesheet" type="text/css" href="css/desk.css" media="only screen and (min-width: 800px)">
+</head>
+<div>
     <div id="contact_info">
-        <div class="center">
-        <h2 class="title">Get in touch</h2>
+        <div class="contact_left">
+            <div>
+                <h2 class="title">Get in touch</h2>
+                <hr class="line" size="4" color="#344EA0" />
 
-        <hr class="line" size="4" color="#344EA0" />
+                <input id="user_name" type="text" name="YOUR NAME" placeholder="YOUR NAME" />
+                <br />
+                <input id="user_email" type="email" name="VALID EMAIL" placeholder="VALID EMAIL" />
+                <textarea id="message" onfocus="if(value=='YOUR MESSAGE'){value=''}" onblur="if (value ==''){value='YOUR MESSAGE'}">YOUR MESSAGE</textarea>
+                <button id="send_message">SEND MESSAGE</button>
+            </div>
+        </div>
+        <div id="map">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJOFXHJrlEfg4hFSoCbD3FRxNpSTJf0TM&callback=initMap">
 
-        <input id="user_name" type="text" name="YOUR NAME" placeholder="YOUR NAME" />
-        <br />
-        <hr size="2" color="#373A3" />
-        <input id="user_email" type="email" name="VALID EMAIL" placeholder="VALID EMAIL" />
-        <hr size="2" color="#373A3" />
-        <textarea id="message" onfocus="if(value=='YOUR MESSAGE'){value=''}" onblur="if (value ==''){value='YOUR MESSAGE'}">YOUR MESSAGE</textarea>
-        <hr size="2" color="#373A3" />
-        <button id="send_message">SEND MESSAGE</button>
+            </script>
+            <script type="text/javascript">
+                var map;
+                function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: -34.397, lng: 150.644 },
+                        zoom: 8
+                    })
+                }
+            </script>
         </div>
     </div>
-    <div id="map">
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJOFXHJrlEfg4hFSoCbD3FRxNpSTJf0TM&callback=initMap">
 
-        </script>
-        <script type="text/javascript">
-            var map;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: { lat: -34.397, lng: 150.644 },
-                    zoom: 8
-                })
-            }
-        </script>
+    <div id="bottom">
+        <img class="footer-logo" src="img/footer-logo.png" />
+        <ul id="contactlist">
+            <li><a href="#FACEBOOK">FACEBOOK</a></li>
+            <li><a href="#TWITTER">TWITTER</a></li>
+            <li><a href="#GOOGLE">GOOGLE+</a></li>
+            <li><a href="#BEHANCE" class="current">BEHANCE</a></li>
+            <li><a href="#DRIBBLE">DRIBBLE</a></li>
+            <li><a href="#INSTAGRAM">INSTAGRAM</a></li>
+        </ul>
+
+        <p>
+            Mese Selimovica 52, Banja Luka - BiHxxxxxxx
+            <br /> (+86) 65 252 222
+            <br /> info@mail.com
+        </p>
+        <img class="angle-up" src="img/angle-up.png" />
     </div>
-</div>
-
-<div id="bottom">
-    <img class="footer-logo" src="img/footer-logo.png" />
-    <ul id="contactlist">
-        <li><a href="#FACEBOOK">FACEBOOK</a></li>
-        <li><a href="#TWITTER">TWITTER</a></li>
-        <li><a href="#GOOGLE">GOOGLE+</a></li>
-        <li><a href="#BEHANCE" class="current">BEHANCE</a></li>
-        <li><a href="#DRIBBLE">DRIBBLE</a></li>
-        <li><a href="#INSTAGRAM">INSTAGRAM</a></li>
-    </ul>
-
-    <p>
-        Mese Selimovica 52, Banja Luka - BiHxxxxxxx
-        <br /> (+86) 65 252 222
-        <br /> info@mail.com
-    </p>
-    <img class="angle-up" src="img/angle-up.png" />
-</div>
-<div id="copyright">
-    @2017 Copyright
+    <div id="copyright">
+        @2017 Copyright
+    </div>
 </div>

@@ -1,28 +1,31 @@
 $(document).ready(function () {
 
-    $(function () {
-        $("#productlistbox").swipe({
-            //Generic swipe handler for all directions
-            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                alert("You swiped " + direction);
+    var imagebox, ico, imageboxWidth, nextID, intervalID, delaytime, speed = 700;//执行速度
+    function product_init() {
+        var width = $(document).width();
+        var showbox = $(".showbox");
+        imagebox = showbox.children('.productlistbox')[0],//获得图片容器
+            ico = $(".icobox").children(),//获得图标数组
+            imageboxWidth = width * 0.7,//获得图片容器的宽度
+            nextID = 0,//下一个图标的ID
+            intervalID,//setInterval()函数的ID
+            delaytime = 4000;//延迟的时间
+        var imagenum = $(imagebox).children().length;//获得图片数量
+
+        $(imagebox).css({ 'width': imageboxWidth * imagenum + "px" });
+        showbox.css({ 'width': imageboxWidth + "px" });
+        $("productbox").each(function () {
+            $(this).css({ 'width': imageboxWidth + "px" });
+        });
+        $(".text").each(function () {
+            if (width < 800) {
+                $(this).css({ 'width': imageboxWidth + "px" });
+            } else {
+                $(this).css({ 'width': (imageboxWidth - 433) + "px" });
             }
         });
-
-        //Set some options later
-        //$("#productlistbox").swipe({ fingers: 2 });
-    });
-
-    var imagebox = $(".showbox").children('.productlistbox')[0],//获得图片容器
-        ico = $(".icobox").children(),//获得图标数组
-        imagenum = $(imagebox).children().length,//获得图片数量
-        imageboxWidth = $(".showbox").width(),//获得图片容器的宽度
-        imagewidth = imageboxWidth * imagenum,//获得图片的总宽度
-        nextID = 0,//下一个图标的ID
-        intervalID,//setInterval()函数的ID
-        delaytime = 4000,//延迟的时间
-        speed = 700;//执行速度
-    $(imagebox).css({ 'width': imagewidth + "px" });
-
+    }
+    product_init();
     var rotate = function (clickID) { //图片滑动函数
         if (clickID >= 0 && clickID < 4) {
             nextID = clickID;
@@ -57,6 +60,10 @@ $(document).ready(function () {
         clearInterval(intervalID);//清楚之前的定时任务
         rotate(nextID - 1);//运行一次带参数的rotate函数
         intervalID = setInterval(rotate, delaytime);
+    });
+
+    $(window).resize(function (event) {
+        product_init();
     });
 
 });

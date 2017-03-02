@@ -112,13 +112,13 @@ h2.title {
     line-height: 75px;
 }
 
-#contact_info.center {
+.contact_left {
     clear: both;
     width: 100%;
     overflow:hidden;
 }
 
-#contact_info .center h2 {
+.contact_left h2 {
     font-family: SFNSDisplay-Regular;
     font-size: 60px;
     color: #242121;
@@ -126,7 +126,7 @@ h2.title {
     line-height: 75px;
 }
 
-#contact_info  .center input , #contact_info  .center textarea {
+.contact_left input, .contact_left textarea {
     width: 92%;
     border: none;
     background: rgba(216,216,216,0.10);
@@ -140,11 +140,11 @@ h2.title {
     padding: 27px 14px 25px 14px;
 }
 
-#contact .center textarea {
+#contact .contact_left textarea {
     height: 200px;
 }
 
-#contact_info .center button#send_message {
+#contact_info .contact_left button#send_message {
     clear: both;
     width: 92%;
     height: 45px;
@@ -219,11 +219,13 @@ h2.title {
     display: none;
 }
 #about-us div#our-info {
-    width: 100%;
     padding: 90px 0;
 }
 #about-us div#our-info p {
     margin: 0 35px;
+    font-family: AppleSystemUIFont;
+    font-size: 14px;
+    color: #777777;
 }
 
 #our-team top {
@@ -235,35 +237,41 @@ h2.title {
     width: 100%;
 }
 
-.team-list .member {
-    padding: 30px 35px;
-}
-.team-list div.img {
-    width: 120px;
-    height: 120px;
-    display: block;
-    margin: 60px auto;
-}
-.team-list div.text{
-    margin: 60px auto;
-    text-align: middle;
+.team-list {
+    margin: 0 6%;
 }
 
-.team-list div.text span {
-    display: block;
-    margin: auto;
+.team-list .member {
+    text-align: center;
+    width: 100%;
+    padding: 45px 0; 
+}
+.team-list .member .img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.member img {
+    display:block;
+    width:100%;
+}
+.team-list .text{
+    margin-top: 30px;
+}
+
+.team-list .text span {
     font-family: SFNSDisplay-Regular;
-    font-size: 32px;
+    font-size: 24px;
     color: #32393D;
 }
 
-.team-list div.text p {
-    display: block;
-    font-family: SFNSText-Regular;
+.team-list .text p {
+    font-family: AppleSystemUIFont;
     font-size: 14px;
-    margin: auto;
-    color: #373A39;
-    line-height: 24px;
+    margin-top: 10px;
+    color: #777777;
+    text-align:justify;
 }
 
 /* product */
@@ -314,13 +322,13 @@ h2.title {
     top: 269px;
 }
 
-.productbox h3 {
+.productbox .p_title {
     width: 100%;
 font-family: SFNSDisplay-Regular;
 font-size: 24px;
 color: #242121;
 letter-spacing: 0px;
-line-height: 36px;
+line-height: 26px;
 }
 .productbox p {
 font-family: SFNSText-Regular;

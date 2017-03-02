@@ -40,11 +40,12 @@ $(document).ready(function () {
             path = "./hd/home.html";
         }
         $("#home").attr('target', path);
-
-        $.get(path + "?ddfj", function (data) {
-            $("#main").html(data);
-            $("#main").css("background", "#344DA1");
-        });
+        if ($("#nav_home").hasClass("current")) {
+            $.get(path, function (data) {
+                $("#main").html(data);
+                $("#main").css("background", "#344DA1");
+            });
+        }
         $('#navlist li').click(function () {
             clickNav(this);
         });
@@ -54,26 +55,16 @@ $(document).ready(function () {
 
 
     var lastWidth;
-    $(window).resize(function (event) {
+    $(window).resize(function () {
         var width = $(this).width();
         if (width > 800 && lastWidth < 800) {
             $('#navlist li').unbind("click");
             $('#navlist').css("display", "block");
-            $('#navlist li').click(function () {
-                deskClickNav(this);
-            });
-            if ($("#nav_home").hasClass("current")) {
-                initHome(width);
-            }
+            initHome(width);
         } else if (width < 800 && lastWidth > 800) {
             $('#navlist li').unbind("click");
             $('#navlist').css("display", "none");
-            $('#navlist li').click(function () {
-                mbClickNav(this);
-            });
-            if ($("#nav_home").hasClass("current")) {
-                initHome(width);
-            }
+            initHome(width);
         }
 
         lastWidth = width;
